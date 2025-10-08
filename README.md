@@ -1,6 +1,6 @@
 # 🚀 MCP Agents Cloud Deployment
 
-Déploiement serverless des agents MCP sur Vercel avec configuration complète.
+Déploiement serverless des agents MCP sur Vercel avec GitHub Actions automatiques.
 
 ## 📁 Structure du Projet
 
