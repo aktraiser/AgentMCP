@@ -31,7 +31,3 @@ jobs:
         vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         vercel-args: '--prod'
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        CONTEXT7_API_KEY: ${{ secrets.CONTEXT7_API_KEY }}
-        LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
