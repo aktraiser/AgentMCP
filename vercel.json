@@ -1,0 +1,62 @@
+{
+  "functions": {
+    "agents/weather/handler.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30
+    },
+    "agents/finance/handler.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30
+    },
+    "agents/code/handler.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30
+    },
+    "agents/master/handler.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    {
+      "src": "/weather/(.*)",
+      "dest": "/agents/weather/handler.py"
+    },
+    {
+      "src": "/finance/(.*)",
+      "dest": "/agents/finance/handler.py"
+    },
+    {
+      "src": "/code/(.*)",
+      "dest": "/agents/code/handler.py"
+    },
+    {
+      "src": "/master/(.*)",
+      "dest": "/agents/master/handler.py"
+    },
+    {
+      "src": "/",
+      "dest": "/agents/master/handler.py"
+    }
+  ],
+  "env": {
+    "OPENMETEO_API_KEY": "@openmeteo_api_key",
+    "YAHOO_FINANCE_KEY": "@yahoo_finance_key",
+    "GITHUB_TOKEN": "@github_token",
+    "WEATHER_AGENT_KEY": "@weather_agent_key",
+    "FINANCE_AGENT_KEY": "@finance_agent_key",
+    "CODE_AGENT_KEY": "@code_agent_key",
+    "MASTER_AGENT_KEY": "@master_agent_key",
+    "WEATHER_AGENT_URL": "@weather_agent_url",
+    "FINANCE_AGENT_URL": "@finance_agent_url",
+    "CODE_AGENT_URL": "@code_agent_url",
+    "OPENAI_API_KEY": "@openai_api_key",
+    "LLM_MODEL": "@llm_model",
+    "CONTEXT7_API_KEY": "@context7_api_key"
+  },
+  "build": {
+    "env": {
+      "PYTHONPATH": "./shared"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "description": "MCP Servers configuration for intelligent agents ecosystem",
+  "servers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "description": "Context7 MCP Server - Up-to-date code documentation for libraries",
+      "auth": {
+        "type": "header",
+        "header": "CONTEXT7_API_KEY",
+        "value": "${CONTEXT7_API_KEY}"
+      },
+      "tools": ["resolve-library-id", "get-library-docs"],
+      "categories": ["code_analysis", "documentation"],
+      "enabled": true
+    }
+  },
+  "routing": {
+    "code_analysis": ["context7"],
+    "documentation": ["context7"]
+  }
+}
