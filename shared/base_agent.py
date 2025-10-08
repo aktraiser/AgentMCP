@@ -40,10 +40,6 @@ class CloudMCPAgentBase(ABC):
             version="1.0.0"
         )
         
-        # Configuration API key depuis les variables d'environnement
-        self.api_key = os.getenv(f"{agent_id.upper()}_KEY")
-        if not self.api_key:
-            logger.warning(f"No API key found for {agent_id}")
         
         self.setup_routes()
         self.setup_middleware()
@@ -57,14 +53,6 @@ class CloudMCPAgentBase(ABC):
             if request.url.path.endswith("/health"):
                 return await call_next(request)
             
-            # Vérifier API key
-            api_key = request.headers.get("X-API-Key")
-            if self.api_key and api_key != self.api_key:
-                logger.warning(f"Unauthorized access attempt to {self.agent_id}")
-                return JSONResponse(
-                    status_code=401,
-                    content={"error": "Invalid API key"}
-                )
             
             # Logging de la requête
             start_time = time.time()

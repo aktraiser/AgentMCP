@@ -27,21 +27,19 @@ class MasterMCPAgent(CloudMCPAgentBase):
             capabilities=["orchestration", "agent_routing", "response_synthesis", "intent_analysis"]
         )
         
-        # Configuration des agents distants
+        # Configuration des agents locaux (déployés sur le même domaine)
+        base_url = os.getenv("VERCEL_URL", "http://localhost:8000")
         self.agents_config = {
             "weather": {
-                "url": os.getenv("WEATHER_AGENT_URL", "https://weather-agent.vercel.app"),
-                "api_key": os.getenv("WEATHER_AGENT_KEY", ""),
+                "url": f"{base_url}/weather",
                 "capabilities": ["weather", "forecast", "climate_analysis"]
             },
             "finance": {
-                "url": os.getenv("FINANCE_AGENT_URL", "https://finance-agent.vercel.app"),
-                "api_key": os.getenv("FINANCE_AGENT_KEY", ""),
+                "url": f"{base_url}/finance", 
                 "capabilities": ["stocks", "markets", "portfolio_analysis"]
             },
             "code": {
-                "url": os.getenv("CODE_AGENT_URL", "https://code-agent.vercel.app"),
-                "api_key": os.getenv("CODE_AGENT_KEY", ""),
+                "url": f"{base_url}/code",
                 "capabilities": ["code_analysis", "syntax_check", "code_execution"]
             }
         }
@@ -206,7 +204,7 @@ class MasterMCPAgent(CloudMCPAgentBase):
             task = self.call_remote_agent(
                 agent_config["url"],
                 request,
-                agent_config["api_key"]
+                ""
             )
             tasks.append(task)
             agent_names.append(agent_name)
@@ -342,7 +340,7 @@ class MasterMCPAgent(CloudMCPAgentBase):
             try:
                 # Test simple avec timeout court
                 response = await asyncio.wait_for(
-                    self.call_remote_agent(config["url"], "health check", config["api_key"]),
+                    self.call_remote_agent(config["url"], "health check", ""),
                     timeout=5.0
                 )
                 
