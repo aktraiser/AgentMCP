@@ -12,6 +12,7 @@ from .agent import WeatherMCPAgent
 
 # Créer l'instance de l'agent
 weather_agent = WeatherMCPAgent()
+app = weather_agent.app
 
 # Adapter pour Vercel/Lambda
-handler = Mangum(weather_agent.app, lifespan="off")
+handler = Mangum(app, lifespan="off")

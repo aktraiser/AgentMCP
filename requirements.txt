@@ -6,6 +6,7 @@ mangum==0.17.0
 # HTTP client pour appels entre agents
 httpx==0.25.2
 aiohttp==3.9.1
+requests==2.31.0
 
 # Validation des données
 pydantic==2.5.0

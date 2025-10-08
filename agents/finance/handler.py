@@ -12,6 +12,7 @@ from .agent import FinanceMCPAgent
 
 # Créer l'instance de l'agent
 finance_agent = FinanceMCPAgent()
+app = finance_agent.app
 
 # Adapter pour Vercel/Lambda
-handler = Mangum(finance_agent.app, lifespan="off")
+handler = Mangum(app, lifespan="off")

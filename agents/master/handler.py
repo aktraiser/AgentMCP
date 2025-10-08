@@ -12,6 +12,7 @@ from .agent import MasterMCPAgent
 
 # Créer l'instance de l'agent
 master_agent = MasterMCPAgent()
+app = master_agent.app
 
 # Adapter pour Vercel/Lambda
-handler = Mangum(master_agent.app, lifespan="off")
+handler = Mangum(app, lifespan="off")

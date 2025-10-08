@@ -12,6 +12,7 @@ from .agent import CodeMCPAgent
 
 # Créer l'instance de l'agent
 code_agent = CodeMCPAgent()
+app = code_agent.app
 
 # Adapter pour Vercel/Lambda
-handler = Mangum(code_agent.app, lifespan="off")
+handler = Mangum(app, lifespan="off")
