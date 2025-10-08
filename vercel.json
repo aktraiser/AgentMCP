@@ -27,6 +27,11 @@
       "src": "/",
       "dest": "/agents/master/handler.py"
     }
+    ,
+    {
+      "src": "/(.*)",
+      "dest": "/agents/master/handler.py/$1"
+    }
   ],
   "build": {
     "env": {
