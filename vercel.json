@@ -1,19 +1,19 @@
 {
   "functions": {
     "agents/weather/handler.py": {
-      "runtime": "python3.9",
+      "runtime": "@vercel/python",
       "maxDuration": 30
     },
     "agents/finance/handler.py": {
-      "runtime": "python3.9",
+      "runtime": "@vercel/python",
       "maxDuration": 30
     },
     "agents/code/handler.py": {
-      "runtime": "python3.9",
+      "runtime": "@vercel/python",
       "maxDuration": 30
     },
     "agents/master/handler.py": {
-      "runtime": "python3.9",
+      "runtime": "@vercel/python",
       "maxDuration": 30
     }
   },
