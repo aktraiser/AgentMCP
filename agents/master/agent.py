@@ -29,6 +29,9 @@ class MasterMCPAgent(CloudMCPAgentBase):
         
         # Configuration des agents locaux (déployés sur le même domaine)
         base_url = os.getenv("VERCEL_URL", "http://localhost:8000")
+        # Vercel fournit souvent VERCEL_URL sans schéma (ex: myapp.vercel.app)
+        if base_url and not base_url.startswith("http://") and not base_url.startswith("https://"):
+            base_url = f"https://{base_url}"
         self.agents_config = {
             "weather": {
                 "url": f"{base_url}/weather",

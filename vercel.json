@@ -9,19 +9,19 @@
   "routes": [
     {
       "src": "/weather/(.*)",
-      "dest": "/agents/weather/handler.py"
+      "dest": "/agents/weather/handler.py/$1"
     },
     {
       "src": "/finance/(.*)",
-      "dest": "/agents/finance/handler.py"
+      "dest": "/agents/finance/handler.py/$1"
     },
     {
       "src": "/code/(.*)",
-      "dest": "/agents/code/handler.py"
+      "dest": "/agents/code/handler.py/$1"
     },
     {
       "src": "/master/(.*)",
-      "dest": "/agents/master/handler.py"
+      "dest": "/agents/master/handler.py/$1"
     },
     {
       "src": "/",
