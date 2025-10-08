@@ -1,23 +1,11 @@
 {
   "version": 2,
-  "functions": {
-    "agents/weather/handler.py": {
-      "runtime": "@vercel/python",
-      "maxDuration": 30
-    },
-    "agents/finance/handler.py": {
-      "runtime": "@vercel/python",
-      "maxDuration": 30
-    },
-    "agents/code/handler.py": {
-      "runtime": "@vercel/python",
-      "maxDuration": 30
-    },
-    "agents/master/handler.py": {
-      "runtime": "@vercel/python",
-      "maxDuration": 30
+  "builds": [
+    {
+      "src": "agents/*/handler.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/weather/(.*)",
