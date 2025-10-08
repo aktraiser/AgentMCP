@@ -14,10 +14,40 @@
       "tools": ["resolve-library-id", "get-library-docs"],
       "categories": ["code_analysis", "documentation"],
       "enabled": true
+    },
+    "leetcode": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jinzcdev/leetcode-mcp-server",
+        "--site",
+        "global",
+        "--session",
+        "${LEETCODE_SESSION}"
+      ],
+      "env": {
+        "LEETCODE_SITE": "global"
+      },
+      "description": "LeetCode MCP Server - Programming problems, solutions, and user data",
+      "tools": [
+        "get_daily_challenge",
+        "get_problem", 
+        "search_problems",
+        "get_user_profile",
+        "get_recent_ac_submissions",
+        "list_problem_solutions",
+        "get_problem_solution"
+      ],
+      "categories": ["coding", "algorithms", "education"],
+      "enabled": true
     }
   },
   "routing": {
     "code_analysis": ["context7"],
-    "documentation": ["context7"]
+    "documentation": ["context7"],
+    "coding": ["leetcode"],
+    "algorithms": ["leetcode"],
+    "education": ["leetcode"]
   }
 }

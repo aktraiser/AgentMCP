@@ -40,19 +40,9 @@
     }
   ],
   "env": {
-    "OPENMETEO_API_KEY": "@openmeteo_api_key",
-    "YAHOO_FINANCE_KEY": "@yahoo_finance_key",
-    "GITHUB_TOKEN": "@github_token",
-    "WEATHER_AGENT_KEY": "@weather_agent_key",
-    "FINANCE_AGENT_KEY": "@finance_agent_key",
-    "CODE_AGENT_KEY": "@code_agent_key",
-    "MASTER_AGENT_KEY": "@master_agent_key",
-    "WEATHER_AGENT_URL": "@weather_agent_url",
-    "FINANCE_AGENT_URL": "@finance_agent_url",
-    "CODE_AGENT_URL": "@code_agent_url",
     "OPENAI_API_KEY": "@openai_api_key",
-    "LLM_MODEL": "@llm_model",
-    "CONTEXT7_API_KEY": "@context7_api_key"
+    "CONTEXT7_API_KEY": "@context7_api_key",
+    "LEETCODE_SESSION": "@leetcode_session"
   },
   "build": {
     "env": {
