@@ -1,23 +1,23 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "agents/*/handler.py",
-      "use": "@vercel/python"
-    }
+    { "src": "agents/weather/handler.py", "use": "@vercel/python" },
+    { "src": "agents/finance/handler.py", "use": "@vercel/python" },
+    { "src": "agents/code/handler.py", "use": "@vercel/python" },
+    { "src": "agents/master/handler.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
       "src": "/weather/(.*)",
-      "dest": "/agents/weather/handler.py/$1"
+      "dest": "/agents/weather/handler.py"
     },
     {
       "src": "/finance/(.*)",
-      "dest": "/agents/finance/handler.py/$1"
+      "dest": "/agents/finance/handler.py"
     },
     {
       "src": "/code/(.*)",
-      "dest": "/agents/code/handler.py/$1"
+      "dest": "/agents/code/handler.py"
     },
     {
       "src": "/master/(.*)",
