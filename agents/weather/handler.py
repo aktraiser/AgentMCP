@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'shared'))
 
 from mangum import Mangum
-from agent import WeatherMCPAgent
+from .agent import WeatherMCPAgent
 
 # Créer l'instance de l'agent
 weather_agent = WeatherMCPAgent()
