@@ -8,6 +8,11 @@
   ],
   "routes": [
     {
+      "src": "/mcp",
+      "dest": "/agents/master/handler.py",
+      "methods": ["GET", "POST", "OPTIONS"]
+    },
+    {
       "src": "/weather/(.*)",
       "dest": "/agents/weather/handler.py"
     },
@@ -22,6 +27,21 @@
     {
       "src": "/master/(.*)",
       "dest": "/agents/master/handler.py"
+    },
+    {
+      "src": "/weather/mcp",
+      "dest": "/agents/weather/handler.py",
+      "methods": ["GET", "POST", "OPTIONS"]
+    },
+    {
+      "src": "/finance/mcp",
+      "dest": "/agents/finance/handler.py",
+      "methods": ["GET", "POST", "OPTIONS"]
+    },
+    {
+      "src": "/code/mcp",
+      "dest": "/agents/code/handler.py",
+      "methods": ["GET", "POST", "OPTIONS"]
     },
     {
       "src": "/",
