@@ -117,6 +117,20 @@ class CloudMCPAgentBase(ABC):
                     id=request.id
                 )
         
+        @self.app.get("/mcp")
+        async def handle_mcp_get():
+            """Endpoint GET pour introspection MCP"""
+            return {
+                "protocol": "MCP",
+                "version": "2024-11-05",
+                "agent_id": self.agent_id,
+                "name": self.name,
+                "capabilities": self.capabilities,
+                "methods": ["process", "capabilities"],
+                "transport": "http",
+                "description": f"MCP Agent: {self.name}"
+            }
+        
         @self.app.get("/health")
         async def health_check():
             """Health check endpoint"""
