@@ -1,13 +1,13 @@
 """
-Vercel handler pour Weather MCP Agent
+Vercel handler pour Document Extraction & Chunking Audit MCP Agent
 """
 import sys
 import os
 
 # Ajouter le path shared au PYTHONPATH
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'shared'))
-from .agent import WeatherMCPAgent
+from .agent import DocumentAuditMCPAgent
 
 # Créer l'instance de l'agent
-weather_agent = WeatherMCPAgent()
-app = weather_agent.app
+audit_agent = DocumentAuditMCPAgent()
+app = audit_agent.app

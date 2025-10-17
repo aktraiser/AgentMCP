@@ -11,9 +11,3 @@ from .agent import MasterMCPAgent
 # Créer l'instance de l'agent
 master_agent = MasterMCPAgent()
 app = master_agent.app
-
-# Exposer le handler pour Vercel avec mounting explicite
-# Vercel va chercher une fonction 'handler' ou une app FastAPI
-def handler(request):
-    """Handler Vercel compatible"""
-    return app(request)

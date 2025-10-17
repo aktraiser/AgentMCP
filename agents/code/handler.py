@@ -11,8 +11,3 @@ from .agent import CodeMCPAgent
 # Créer l'instance de l'agent
 code_agent = CodeMCPAgent()
 app = code_agent.app
-
-# Exposer le handler pour Vercel avec mounting explicite
-def handler(request):
-    """Handler Vercel compatible"""
-    return app(request)

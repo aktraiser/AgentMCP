@@ -11,8 +11,3 @@ from .agent import FinanceMCPAgent
 # Créer l'instance de l'agent
 finance_agent = FinanceMCPAgent()
 app = finance_agent.app
-
-# Exposer le handler pour Vercel avec mounting explicite
-def handler(request):
-    """Handler Vercel compatible"""
-    return app(request)

@@ -41,6 +41,31 @@
       ],
       "categories": ["coding", "algorithms", "education"],
       "enabled": true
+    },
+    "docling": {
+      "type": "http",
+      "url": "${DOCLING_MCP_URL}",
+      "enabled": true,
+      "description": "Docling MCP Server for document extraction and analysis",
+      "tools": ["extract_document", "convert_file", "analyze_structure", "get_extraction_stats"],
+      "categories": ["document_extraction", "content_analysis"],
+      "auth": {
+        "type": "header",
+        "header": "X-API-Key",
+        "value": "${DOCLING_API_KEY}"
+      }
+    },
+    "supabase-vector": {
+      "type": "http", 
+      "url": "${SUPABASE_MCP_URL}",
+      "enabled": false,
+      "description": "Supabase Vector Operations MCP Server (optional)",
+      "tools": ["search_similarity", "insert_embedding", "analyze_vectors", "check_index_health"],
+      "categories": ["vector_operations", "embedding_analysis"],
+      "auth": {
+        "type": "bearer",
+        "token": "${SUPABASE_SERVICE_ROLE_KEY}"
+      }
     }
   },
   "routing": {
@@ -48,6 +73,10 @@
     "documentation": ["context7"],
     "coding": ["leetcode"],
     "algorithms": ["leetcode"],
-    "education": ["leetcode"]
+    "education": ["leetcode"],
+    "document_extraction": ["docling"],
+    "content_analysis": ["docling"],
+    "vector_operations": ["supabase-vector"],
+    "embedding_analysis": ["supabase-vector"]
   }
 }
